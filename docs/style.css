@@ -1,9 +1,9 @@
 /* Variables para projectos de CSS by Alex-apt */
 
 :root {
-  --first-color: #ca49cd;
+  --first-color: #cacc11;
   --first-alpha-color: rgba(134, 134, 134, 0.75);
-  --second-color: #252525;
+  --second-color: #2f2f2f;
   --second-alpha-color: rgba(37, 32, 27, 0.75);
 
   --white-color: #fff;
@@ -17,7 +17,7 @@
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   /* tipografía */
-  --font: ;
+  --font: "Roboto", sans-serif;
   /* anchura maxima */
   --max-width: 1200px;
   /* altura del header */
@@ -62,7 +62,7 @@ h1 {
 }
 h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 h3 {
   margin: 0;
@@ -96,6 +96,7 @@ p {
   margin: 2rem auto;
   padding: 1rem;
   max-width: 800px;
+  border-radius: 10px;
 }
 
 .contact-form > * {
@@ -317,7 +318,7 @@ p {
 
 .btn {
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.7rem;
   display: inline-block;
   width: 200px;
   font-weight: bold;
@@ -342,9 +343,9 @@ p {
   padding: 2rem 1rem;
 }
 .section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
+  border-bottom: 3px solid var(--first-color);
   margin: 2rem auto;
+  letter-spacing: 0.5rem;
   padding: 0.5rem 1rem;
   width: 250px;
   text-align: center;
@@ -398,6 +399,7 @@ p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 10px;
 }
 
 .contact-card > svg {
@@ -506,6 +508,9 @@ p {
 @media screen and (min-width: 1024px) {
   .contact-cards {
     grid-template-columns: repeat(4, 24%);
+  }
+  .footer {
+    margin-bottom: 0;
   }
   .header {
     position: sticky;
