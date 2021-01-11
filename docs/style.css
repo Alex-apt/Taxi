@@ -1,9 +1,9 @@
 /* Variables para projectos de CSS by Alex-apt */
 
 :root {
-  --first-color: #ca49cd;
+  --first-color: #cacc11;
   --first-alpha-color: rgba(134, 134, 134, 0.75);
-  --second-color: #252525;
+  --second-color: #2f2f2f;
   --second-alpha-color: rgba(37, 32, 27, 0.75);
 
   --white-color: #fff;
@@ -17,7 +17,7 @@
   --white-alpha-color: rgba(255, 255, 255, 0.5);
   --black-alpha-color: rgba(0, 0, 0, 0.5);
   /* tipografía */
-  --font: ;
+  --font: "Roboto", sans-serif;
   /* anchura maxima */
   --max-width: 1200px;
   /* altura del header */
@@ -62,7 +62,7 @@ h1 {
 }
 h2 {
   margin: 0;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
 }
 h3 {
   margin: 0;
@@ -96,6 +96,7 @@ p {
   margin: 2rem auto;
   padding: 1rem;
   max-width: 800px;
+  border-radius: 10px;
 }
 
 .contact-form > * {
@@ -196,7 +197,7 @@ p {
 
 .hero-image-title {
   font-size: 7.5vw;
-  color: var(--hero-text-color);
+  color: var(--white-alpha-color);
 }
 
 /* ********** Menu ********** */
@@ -305,6 +306,94 @@ p {
   opacity: 1;
   pointer-events: auto;
 }
+/******* modal2 *********/
+/* Style the Image Used to Trigger the Modal */
+.foto {
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.foto:hover {
+  opacity: 0.7;
+}
+
+/* The Modal (background) */
+.modal2 {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0, 0, 0); /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal2-content {
+  margin: auto;
+  display: block;
+  width: 100%;
+  max-width: 700px;
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+  margin: auto;
+  display: block;
+  width: 80%;
+  max-width: 700px;
+  text-align: center;
+  color: #ccc;
+  padding: 10px 0;
+  height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal2-content,
+#caption {
+  animation-name: zoom;
+  animation-duration: 0.6s;
+}
+
+@keyframes zoom {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
+
+/* The Close Button */
+.close {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+  color: #bbb;
+  text-decoration: none;
+  cursor: pointer;
+}
+@media screen and (min-width: 768px) {
+  .modal2-content {
+    width: 80%;
+  }
+  .close {
+    top: 55px;
+  }
+}
 
 /*************** UTILITIES *******************/
 .bg-gray-light {
@@ -317,7 +406,7 @@ p {
 
 .btn {
   border-radius: 0.5rem;
-  padding: 1rem;
+  padding: 0.7rem;
   display: inline-block;
   width: 200px;
   font-weight: bold;
@@ -342,9 +431,9 @@ p {
   padding: 2rem 1rem;
 }
 .section-title {
-  border-top: thin solid var(--first-color);
-  border-bottom: thin solid var(--first-color);
+  border-bottom: 3px solid var(--first-color);
   margin: 2rem auto;
+  letter-spacing: 0.5rem;
   padding: 0.5rem 1rem;
   width: 250px;
   text-align: center;
@@ -398,6 +487,7 @@ p {
   flex-direction: column;
   justify-content: space-around;
   align-items: center;
+  border-radius: 10px;
 }
 
 .contact-card > svg {
@@ -411,7 +501,16 @@ p {
 }
 .fotos {
   display: grid;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  grid-auto-rows: 300px;
+  gap: 10px;
+}
+.foto {
+  width: 100%;
+  min-width: 350px;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
 }
 
 .footer {
@@ -486,12 +585,7 @@ p {
     grid-template-columns: repeat(2, 48%);
     justify-content: space-between;
   }
-  .fotos {
-    grid-template-columns: 1fr 1fr;
-  }
-  .fotos > h2 {
-    grid-column: span 2;
-  }
+
   .services > .container {
     display: grid;
     grid-template-columns: repeat(2, 45%);
@@ -506,6 +600,9 @@ p {
 @media screen and (min-width: 1024px) {
   .contact-cards {
     grid-template-columns: repeat(4, 24%);
+  }
+  .footer {
+    margin-bottom: 0;
   }
   .header {
     position: sticky;
